@@ -2,7 +2,7 @@ import { Button } from 'components/Button/Button';
 import { Component } from 'react';
 import { ImageGallery } from 'components/ImageGallery/ImageGallery';
 import { SearchBar } from 'components/SearchBar/SearchBar';
-import { getSearchImage } from 'components/Api/Api';
+import { getSearchImage } from 'api/Api';
 import { Loader } from 'components/Loader/Loader';
 import { Modal } from 'components/Modal/Modal';
 
@@ -46,15 +46,11 @@ export class App extends Component {
   };
 
   handleFormSubmit = searhQuerry => {
-    this.setState({
-      page: 1,
-    });
-    this.setState({
-      pictures: [],
-    });
-    this.setState({
-      searhQuerry,
-    });
+      this.setState({
+        page: 1,
+        pictures: [],
+        searhQuerry,
+      });
   };
 
   showModal = modalImgUrl => {
